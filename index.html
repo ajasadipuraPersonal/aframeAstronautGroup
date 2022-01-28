@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
+  </head>
+  <body>
+
+    <a-scene>
+      <!-- Asset Management System -->
+      <a-assets>
+        <a-asset-item id="astronaut" src="Assets/astronaut/scene.gltf"></a-asset-item>
+        <a-asset-item id="earth" src="Assets/Earth/scene.gltf"></a-asset-item>
+        <a-asset-item id="ufo" src="Assets/ufo/scene.gltf"></a-asset-item>
+
+      </a-assets>
+
+      <a-sky src="Assets/galaxy.png" segments-height ="5" segments-width="5" color="#AED6F1"></a-sky>
+
+
+      <!-- Astro -->
+      <a-entity position="0 0.017 -8" gltf-model="#astronaut" rotation = "0 180 0" scale = "2 2 2"></a-entity>
+
+      <!-- Astro -->
+      <a-entity position="3 0.017 -8" gltf-model="#astronaut" rotation = "0 180 0" scale = "2 2 2"></a-entity>
+
+      <!-- Earth -->
+      <a-entity position="-4 10 -40" gltf-model="#earth" rotation = "0 -45 0" scale = "0.15 0.15 0.15"></a-entity>
+
+       <!-- UFO -->
+       <a-entity position="6 3 -4.0" gltf-model="#ufo" scale = "0.005 0.005 0.005" animation__yoyo="property: position; dir: alternate; dur: 1000; easing: easeInSine; loop: true; to: 12 3 -8"></a-entity>
+
+       <a-entity position="13 20 -35" gltf-model="#ufo" scale = "0.005 0.005 0.005" animation__yoyo="property: position; dir: alternate; dur: 1000; easing: easeInSine; loop: true; to: 13 5 -35"></a-entity>
+
+       <a-entity position="-25 20 -35" gltf-model="#ufo" scale = "0.005 0.005 0.005" animation__yoyo="property: position; dir: alternate; dur: 1000; easing: easeInSine; loop: true; to: -25 5 -35"></a-entity>
+
+       <a-entity position="-6 3 -4.0" gltf-model="#ufo" scale = "0.005 0.005 0.005" animation__yoyo="property: position; dir: alternate; dur: 1000; easing: easeInSine; loop: true; to: -6 1 -8"></a-entity>
+
+      <!-- Camera -->
+      <a-entity position="-4 2 5">
+        <a-camera></a-camera>
+      </a-entity>
+
+      <a-plane src = "" position="0 0 -4" rotation="-90 0 0" width="50" height="50" color="grey";>
+      </a-plane>
+    </a-scene>
+  </body>
+</html>
